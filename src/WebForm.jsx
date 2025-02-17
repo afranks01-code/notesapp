@@ -23,7 +23,10 @@ const WebForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+  
+    // Log the formData right before submitting
+    console.log("Submitting data:", formData);  // This will print formData to the browser console
+  
     try {
       const response = await fetch(API_URL, {
         method: "POST",
@@ -32,18 +35,29 @@ const WebForm = () => {
         },
         body: JSON.stringify(formData),
       });
-
+  
       if (response.ok) {
         const result = await response.json();
         setResponseMessage(`Success: ${result.message}`);
-        setFormData({ client: "", project: "", clockify: "", smartsheets: "", projtype: "", pmgr: "", devresource: "", qaresource: "",}); // Reset form
+        setFormData({
+          client: "",
+          project: "",
+          clockify: "False",
+          smartsheets: "False",
+          projtype: "",
+          pmgr: "",
+          devresource: "",
+          qaresource: "",
+        }); // Reset form
       } else {
         setResponseMessage("Error submitting form");
       }
     } catch (error) {
+      console.error("Network error:", error);  // Log any network errors
       setResponseMessage("Network error");
     }
   };
+  
 
   return (
     <div className="max-w-lg mx-auto p-4 bg-white shadow-md rounded-lg">
