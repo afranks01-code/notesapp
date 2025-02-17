@@ -5,8 +5,8 @@ const WebForm = () => {
   const [formData, setFormData] = useState({
     client: "",
     project: "",
-    clockify: "False",
-    smartsheets: "False",
+    clockify: "",
+    smartsheets: "",
     projtype: "",
     pmgr: "", // Default selected value
     devresource: "",
@@ -135,6 +135,7 @@ const WebForm = () => {
             className="w-full p-2 border rounded"
             required
           >
+            <option value="">Select One:</option>
             <option value="ONBOARD">Client Onboarding</option>
             <option value="DECOM">Client Decommissioning</option>
           </select>
@@ -148,6 +149,7 @@ const WebForm = () => {
             className="w-full p-2 border rounded"
             required
           >
+            <option value="">Select One:</option>
             <option value="5e976896bb457c10356071a2">Kim Chiu</option>
             <option value="6050fd199d1fbf13678fe224">Negar Samenirad</option>
             <option value="6050fd199d1fbf13678fe225">Corina Beitz</option>
@@ -163,6 +165,7 @@ const WebForm = () => {
             className="w-full p-2 border rounded"
             required
           >
+            <option value="">Select One:</option>
             <option value="6054ca5816d7fa0014bd6b9e">Robert Kim</option>
             <option value="6054ca5816d7fa0014bd6b9d">Di Wang</option>
             <option value="6054ca31c70e5d7198483db6">Andy Franks</option>
@@ -179,6 +182,7 @@ const WebForm = () => {
             className="w-full p-2 border rounded"
             required
           >
+            <option value="">Select One:</option>
             <option value="6054ca5816d7fa0014bd6b9d">Di Wang</option>
             <option value="6050fd199d1fbf13678fe224">Negar Samenirad</option>
           </select>
