@@ -9,6 +9,8 @@ const WebForm = () => {
     smartsheets: "False",
     projtype: "",
     pmgr: "", // Default selected value
+    devresource: "",
+    qaresource: "",
   });
 
   const [responseMessage, setResponseMessage] = useState("");
@@ -34,7 +36,7 @@ const WebForm = () => {
       if (response.ok) {
         const result = await response.json();
         setResponseMessage(`Success: ${result.message}`);
-        setFormData({ name: "", email: "", message: "" }); // Reset form
+        setFormData({ client: "", project: "", clockify: "", smartsheets: "", projtype: "", pmgr: "", devresource: "", qaresource: "",}); // Reset form
       } else {
         setResponseMessage("Error submitting form");
       }
