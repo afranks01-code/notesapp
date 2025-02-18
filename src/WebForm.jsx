@@ -42,8 +42,8 @@ const WebForm = () => {
         setFormData({
           client: "",
           project: "",
-          clockify: "False",
-          smartsheets: "False",
+          clockify: "",
+          smartsheets: "",
           projtype: "",
           pmgr: "",
           devresource: "",
@@ -94,6 +94,7 @@ const WebForm = () => {
             className="w-full p-2 border rounded"
             required
           >
+            <option value="">Select One:</option>
             <option value="True">Yes</option>
             <option value="False">No</option>
           </select>
@@ -107,6 +108,7 @@ const WebForm = () => {
             className="w-full p-2 border rounded"
             required
           >
+            <option value="">Select One:</option>
             <option value="True">Yes</option>
             <option value="False">No</option>
           </select>
@@ -174,7 +176,7 @@ const WebForm = () => {
           </select>
         </label><br /><br />
         <label className="block mb-2">
-        Project Type:
+        QA Resource:
           <select
             name="qaresource"
             value={formData.qaresource}
