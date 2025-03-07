@@ -41,7 +41,8 @@ const WebForm = () => {
         setResponseMessage(`Success: ${result.message}`);
         setFormData({
           client: "",
-          project: "",
+          project_code: "",
+          project_name: "",
           clockify: "",
           smartsheets: "",
           projtype: "",
@@ -76,11 +77,22 @@ const WebForm = () => {
           />
         </label><br /><br />
         <label className="block mb-2">
-        Project Code:
+        Project Code (i.e. CLIENT-S1901):
           <input
             type="text"
-            name="project"
-            value={formData.project}
+            name="project_code"
+            value={formData.project_code}
+            onChange={handleChange}
+            className="w-full p-2 border rounded"
+            required
+          />
+        </label><br /><br />
+        <label className="block mb-2">
+        Project Name (i.e. CLIENT Onboarding):
+          <input
+            type="text"
+            name="project_name"
+            value={formData.project_name}
             onChange={handleChange}
             className="w-full p-2 border rounded"
             required
